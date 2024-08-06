@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root{
+    --primary-color: #a855f7;
+    --primary-color-dark: #9333ea;
+    --secondary-color:#ca8a04;
+    --text-dark:#1f2927;
+    --text-light:#6b7280;
+    --extra-light:#faf5ff;
+    --max-widht:1200px
+}
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+body{
+    font-family: "popins",sans-serif;
+}
+nav{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: O;
+    background-color: #FFFFFF;
+    z-index: 99;
+}
+.navbar{
+    max-width: var(--max-widht);
+    margin: auto;
+    padding: 1.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav .logo a{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    transition: 3s;
+}
+:hover nav .logo a{
+    color: var(--primary-color-dark);
+}
+nav .checkbox{
+    display: none;
+}
+nav input{
+    display: none;
+}
+nav .checkbox i{
+    font-size: 2rem;
+    color:  var(--primary-color);
+    cursor: pointer;
+}
+ul{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    transition: left 0.3s;
+}
+ul li a{
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: 0.3S;
+}
+:hover ul li a{
+    border-top-color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+    color: var(--secondary-color);
+}
+.section{
+    background-color: var(--extra-light);
+}
+.s1{
+    min-height: 100vh;
+    max-width: var(--max-widht);
+    margin: auto;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+}
+.s2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.sub{
+    letter-spacing: 2px;
+    color: var(--text-light);
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+.tittle{
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+.tittle span{
+    font-weight: 600;
+}
+.desc{
+    line-height: 1.5rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+.btn{
+    display: flex;
+    gap: 1rem;
+}
+.btn button{
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 1rem 2rem;
+    outline: none;
+    border: 2px var(--primary-color);
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.hire_me{
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+}
+:hover .hire_me{
+    background-color: var(--primary-color-dark);
+}
+.portfolio{
+    color: var(--primary-color);
+}
+:hover .portfolio{
+    background-color: var(--primary-color-dark);
+    color: #FFFFFF;
+}
+.pic{
+    display: grid;
+    place-items: center;
+}
+.pic img{
+    width: min(25rem,90%);
+    border-radius: 100%;
+}
+
+
+
+@media (width < 750px){
+    nav .checkbox{
+        display: block;
+    }
+    ul{
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 85px);
+        left: -100px;
+        top: 85px;
+        background-color: var(--extra-light);
+        flex-direction: column;
+        justify-content: center;
+        gap: 3rem;
+    }
+    nav #check:checked ~ ul{
+        left: 0;
+    }
+    ul li a{
+        font-size: 1.25rem;
+    }
+    .s2{
+        padding: 10rem 1rem 5rem 1rem;
+        text-align: center;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .pic{
+        grid-area: 1/1/2/2;
+    }
+    .btn{
+        margin: auto;
+    }
+}
